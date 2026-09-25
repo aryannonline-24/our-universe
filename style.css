@@ -1,0 +1,4469 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+
+    background: #000000;
+
+    color: white;
+
+    font-family: Georgia, serif;
+}
+
+
+/* =========================
+   OPENING SCREEN
+========================= */
+
+#welcome {
+
+    width: 100%;
+    height: 100vh;
+
+    background: #000000;
+
+    overflow: hidden;
+
+}
+
+
+.night-sky {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    background: #000000;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================
+   MOON
+========================= */
+
+.moon {
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    top: 15%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #ffffff,
+            #eeeeee 45%,
+            #d8d8d8 100%
+        );
+
+    box-shadow:
+
+    0 0 25px rgba(255, 255, 255, 0.35),
+
+    0 0 70px rgba(255, 255, 255, 0.18),
+
+    0 0 140px rgba(255, 255, 255, 0.08);
+
+    opacity: 0;
+
+    animation:
+        moonAppear 4s ease forwards;
+
+}
+
+
+/* Moon craters */
+
+.moon::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: rgba(170, 170, 170, 0.20);
+
+    top: 35px;
+    left: 50px;
+
+    box-shadow:
+
+        50px 25px 0 8px
+        rgba(170, 170, 170, 0.12),
+
+        25px 80px 0 5px
+        rgba(170, 170, 170, 0.18),
+
+        90px 90px 0 10px
+        rgba(170, 170, 170, 0.10);
+
+}
+
+
+/* =========================
+   MOON ANIMATION
+========================= */
+
+@keyframes moonAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(0.7);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================
+   OPENING TEXT
+========================= */
+
+.opening-text {
+
+    position: absolute;
+
+    width: 100%;
+
+    bottom: 12%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    opacity: 0;
+
+    animation:
+        textAppear 2s ease 3s forwards;
+
+}
+
+
+.moon-line {
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    color: #dddddd;
+
+    margin-bottom: 15px;
+
+}
+
+
+.story-line {
+
+    font-size: 17px;
+
+    color: #999999;
+
+    margin-bottom: 30px;
+
+}
+
+
+.opening-text h1 {
+
+    font-size: 55px;
+
+    font-weight: normal;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.opening-text h1 span {
+
+    color: #ffffff;
+
+}
+
+
+.subtitle {
+
+    font-size: 16px;
+
+    letter-spacing: 3px;
+
+    color: #888888;
+
+}
+
+
+/* =========================
+   ENTER BUTTON
+========================= */
+
+button {
+
+    margin-top: 35px;
+
+    padding: 14px 28px;
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.35);
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    color: white;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: all 0.4s ease;
+
+}
+
+
+button:hover {
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 255, 255, 0.15);
+
+}
+
+
+/* =========================
+   TEXT ANIMATION
+========================= */
+
+@keyframes textAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, 20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, 0);
+
+    }
+
+}
+
+
+/* =========================
+   MAIN WEBSITE
+========================= */
+
+#universe {
+
+    min-height: 100vh;
+
+    background: #000000;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+}
+
+
+#universe h2 {
+
+    font-size: 40px;
+
+    margin-bottom: 20px;
+
+}
+
+
+#universe p {
+
+    color: #999999;
+
+}
+
+
+/* =========================
+   HIDE / SHOW
+========================= */
+
+.hidden {
+
+    display: none;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .moon {
+
+        width: 130px;
+        height: 130px;
+
+        top: 13%;
+
+    }
+
+
+    .opening-text {
+
+        bottom: 10%;
+
+        padding: 0 20px;
+
+    }
+
+
+    .moon-line {
+
+        font-size: 16px;
+
+    }
+
+
+    .story-line {
+
+        font-size: 14px;
+
+    }
+
+
+    .opening-text h1 {
+
+        font-size: 35px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .subtitle {
+
+        font-size: 13px;
+
+    }
+
+
+}
+/* =========================
+   STARS
+========================= */
+
+.star {
+
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    opacity: 0;
+
+}
+
+
+/* =========================
+   STAR TWINKLING
+========================= */
+
+@keyframes starTwinkle {
+
+    0% {
+        opacity: 0.1;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+
+}
+
+
+/* =========================
+   ENTERING UNIVERSE
+========================= */
+
+#welcome.entering .star {
+
+    animation:
+        starReveal 3s ease forwards;
+
+}
+
+
+@keyframes starReveal {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+
+}
+
+
+/* Moon moves upward */
+
+#welcome.entering .moon {
+
+    animation:
+        moonRise 3s ease forwards;
+
+}
+
+
+@keyframes moonRise {
+
+    0% {
+
+        top: 15%;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+
+    }
+
+    100% {
+
+        top: -10%;
+
+        transform:
+            translateX(-50%)
+            scale(0.7);
+
+    }
+
+}
+
+
+/* Opening text fades away */
+
+#welcome.entering .opening-text {
+
+    animation:
+        textDisappear 1.5s ease forwards;
+
+}
+
+
+@keyframes textDisappear {
+
+    to {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, 30px);
+
+    }
+
+}
+/* =========================
+   OUR UNIVERSE
+========================= */
+
+.universe-home {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background: #000000;
+
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.universe-title {
+
+    position: absolute;
+
+    top: 10%;
+
+    width: 100%;
+
+    text-align: center;
+
+}
+
+
+.small-title {
+
+    font-size: 11px;
+
+    letter-spacing: 6px;
+
+    color: #666666;
+
+    margin-bottom: 12px;
+
+}
+
+
+.universe-title h2 {
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    letter-spacing: 9px;
+
+    color: #eeeeee;
+
+    margin-bottom: 20px;
+
+}
+
+
+.description {
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    padding: 0 20px;
+
+    color: #666666;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================
+   TWO PEOPLE
+========================= */
+
+.universe-person {
+
+    position: absolute;
+
+    text-align: center;
+
+}
+
+
+.aryan {
+
+    left: 25%;
+
+    top: 48%;
+
+}
+
+
+.krushna {
+
+    right: 25%;
+
+    top: 48%;
+
+}
+
+
+/* =========================
+   PERSONAL STARS
+========================= */
+
+.personal-star {
+
+    font-size: 90px;
+
+    color: #ffffff;
+
+    line-height: 1;
+
+    text-shadow:
+
+        0 0 10px rgba(255,255,255,0.9),
+
+        0 0 30px rgba(255,255,255,0.7),
+
+        0 0 60px rgba(255,255,255,0.4),
+
+        0 0 100px rgba(255,255,255,0.15);
+
+    animation:
+
+        personalGlow
+        3s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes personalGlow {
+
+    from {
+
+        transform: scale(0.95);
+
+        opacity: 0.75;
+
+    }
+
+    to {
+
+        transform: scale(1.08);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================
+   NAMES
+========================= */
+
+.universe-person h3 {
+
+    margin-top: 15px;
+
+    font-size: 17px;
+
+    font-weight: normal;
+
+    letter-spacing: 5px;
+
+    color: #eeeeee;
+
+}
+
+
+.universe-person p {
+
+    margin-top: 8px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: #555555;
+
+}
+
+
+/* =========================
+   CONNECTION LINE
+========================= */
+
+.connection-line {
+
+    position: absolute;
+
+    top: 56%;
+
+    left: 30%;
+
+    width: 40%;
+
+    height: 1px;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255,255,255,0.25),
+
+            transparent
+
+        );
+
+}
+
+
+/* Heart in the middle */
+
+.connection-line::after {
+
+    content: "♥";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    text-shadow:
+
+        0 0 10px
+        rgba(255,255,255,0.8);
+
+}
+
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+
+.scroll-message {
+
+    position: absolute;
+
+    bottom: 5%;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #444444;
+
+}
+
+
+.scroll-arrow {
+
+    font-size: 22px;
+
+    animation:
+
+        scrollBounce
+        1.8s infinite;
+
+}
+
+
+.scroll-message p {
+
+    margin-top: 8px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+}
+
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(8px);
+
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .universe-title {
+
+        top: 9%;
+
+    }
+
+
+    .universe-title h2 {
+
+        font-size: 32px;
+
+        letter-spacing: 5px;
+
+    }
+
+
+    .description {
+
+        font-size: 13px;
+
+    }
+
+
+    .aryan {
+
+        left: 10%;
+
+        top: 48%;
+
+    }
+
+
+    .krushna {
+
+        right: 10%;
+
+        top: 48%;
+
+    }
+
+
+    .personal-star {
+
+        font-size: 60px;
+
+    }
+
+
+    .universe-person h3 {
+
+        font-size: 12px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .universe-person p {
+
+        display: none;
+
+    }
+
+
+    .connection-line {
+
+        left: 25%;
+
+        width: 50%;
+
+        top: 54%;
+
+    }
+
+}
+/* =========================
+   OUR STORY
+========================= */
+
+#story {
+
+    position: relative;
+
+    min-height: 130vh;
+
+    background: #000000;
+
+    overflow: hidden;
+
+    padding-top: 100px;
+
+}
+
+
+/* =========================
+   STORY HEADER
+========================= */
+
+.story-header {
+
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+}
+
+
+.story-header p {
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: #555555;
+
+    margin-bottom: 15px;
+
+}
+
+
+.story-header h2 {
+
+    font-size: 45px;
+
+    font-weight: normal;
+
+    letter-spacing: 8px;
+
+    color: #eeeeee;
+
+}
+
+
+.story-header span {
+
+    display: block;
+
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    color: #666666;
+
+}
+
+
+/* =========================
+   CONSTELLATION AREA
+========================= */
+
+.story-universe {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    height: 850px;
+
+    margin: 40px auto 0;
+
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.story-star {
+
+    position: absolute;
+
+    width: 55px;
+
+    height: 55px;
+
+    padding: 0;
+
+    margin: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 42px;
+
+    line-height: 55px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    text-shadow:
+
+        0 0 8px white,
+
+        0 0 20px rgba(255,255,255,0.8),
+
+        0 0 40px rgba(255,255,255,0.35);
+
+    animation:
+        storyStarGlow 2.5s ease-in-out infinite alternate;
+
+}
+
+
+.story-star:hover {
+
+    transform: scale(1.3);
+
+}
+
+
+@keyframes storyStarGlow {
+
+    from {
+
+        opacity: 0.65;
+
+        text-shadow:
+
+            0 0 8px white,
+
+            0 0 18px rgba(255,255,255,0.5);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        text-shadow:
+
+            0 0 12px white,
+
+            0 0 30px rgba(255,255,255,0.9),
+
+            0 0 50px rgba(255,255,255,0.4);
+
+    }
+
+}
+
+
+/* =========================
+   STAR POSITIONS
+========================= */
+
+.star-1 {
+
+    left: 18%;
+
+    top: 10%;
+
+}
+
+
+.star-2 {
+
+    left: 42%;
+
+    top: 25%;
+
+}
+
+
+.star-3 {
+
+    left: 70%;
+
+    top: 38%;
+
+}
+
+
+.star-4 {
+
+    left: 45%;
+
+    top: 57%;
+
+}
+
+
+.star-5 {
+
+    left: 20%;
+
+    top: 78%;
+
+}
+/* =========================
+   FUTURE MEMORY
+========================= */
+
+.star-5 {
+
+    opacity: 0.55;
+
+    animation:
+        futureStar 3s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes futureStar {
+
+    from {
+
+        opacity: 0.35;
+
+        transform: scale(0.9);
+
+    }
+
+    to {
+
+        opacity: 0.85;
+
+        transform: scale(1.15);
+
+    }
+
+}
+
+
+/* =========================
+   LABELS
+========================= */
+
+.story-label {
+
+    position: absolute;
+
+    color: #777777;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+
+}
+
+
+/* label positions */
+
+.label-1 {
+
+    left: 12%;
+
+    top: 18%;
+
+}
+
+
+.label-2 {
+
+    left: 38%;
+
+    top: 33%;
+
+}
+
+
+.label-3 {
+
+    left: 66%;
+
+    top: 46%;
+
+}
+
+
+.label-4 {
+
+    left: 39%;
+
+    top: 65%;
+
+}
+
+
+.label-5 {
+
+    left: 14%;
+
+    top: 86%;
+
+}
+
+
+/* =========================
+   CONSTELLATION LINES
+========================= */
+
+.constellation-line {
+
+    position: absolute;
+
+    height: 1px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.22),
+            transparent
+        );
+
+    transform-origin: left center;
+
+}
+
+
+/* line 1 */
+
+.line-1 {
+
+    width: 290px;
+
+    left: 21%;
+
+    top: 16%;
+
+    transform: rotate(25deg);
+
+}
+
+
+/* line 2 */
+
+.line-2 {
+
+    width: 300px;
+
+    left: 44%;
+
+    top: 30%;
+
+    transform: rotate(23deg);
+
+}
+
+
+/* line 3 */
+
+.line-3 {
+
+    width: 300px;
+
+    left: 46%;
+
+    top: 62%;
+
+    transform: rotate(155deg);
+
+}
+
+
+/* line 4 */
+
+.line-4 {
+
+    width: 300px;
+
+    left: 23%;
+
+    top: 82%;
+
+    transform: rotate(-65deg);
+
+}
+
+
+/* =========================
+   MEMORY MODAL
+========================= */
+
+.memory-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0,0,0,0.82);
+
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.4s;
+
+}
+
+
+.memory-modal.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* =========================
+   MEMORY CARD
+========================= */
+
+.memory-card {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 50px 40px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(30,30,30,0.95),
+            rgba(8,8,8,0.98)
+        );
+
+    border: 1px solid
+        rgba(255,255,255,0.12);
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+
+        0 0 60px
+        rgba(255,255,255,0.05);
+
+    transform: translateY(30px);
+
+    transition: 0.4s;
+
+}
+
+
+.memory-modal.active
+.memory-card {
+
+    transform: translateY(0);
+
+}
+
+
+/* memory number */
+
+#memory-number {
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color: #555555;
+
+}
+
+
+/* title */
+
+#memory-title {
+
+    margin-top: 15px;
+
+    font-size: 30px;
+
+    font-weight: normal;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* date */
+
+.memory-date {
+
+    margin-top: 12px;
+
+    color: #777777;
+
+    font-size: 12px;
+
+}
+
+
+/* message */
+
+#memory-text {
+
+    margin-top: 30px;
+
+    color: #aaaaaa;
+
+    font-size: 15px;
+
+    line-height: 2;
+
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-memory {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 20px;
+
+    margin: 0;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #777777;
+
+    font-size: 28px;
+
+}
+
+
+.close-memory:hover {
+
+    background: transparent;
+
+    box-shadow: none;
+
+    transform: none;
+
+}
+
+
+/* =========================
+   CLOSE MEMORY BUTTON
+========================= */
+
+.next-memory {
+
+    margin-top: 30px;
+
+    padding: 10px 22px;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    #story {
+
+        min-height: 120vh;
+
+        padding-top: 80px;
+
+    }
+
+
+    .story-header h2 {
+
+        font-size: 32px;
+
+        letter-spacing: 5px;
+
+    }
+
+
+    .story-universe {
+
+        height: 750px;
+
+    }
+
+
+    .story-star {
+
+        font-size: 32px;
+
+    }
+
+
+    .star-1 {
+
+        left: 12%;
+
+    }
+
+
+    .star-2 {
+
+        left: 40%;
+
+    }
+
+
+    .star-3 {
+
+        left: 70%;
+
+    }
+
+
+    .star-4 {
+
+        left: 40%;
+
+    }
+
+
+    .star-5 {
+
+        left: 12%;
+
+    }
+
+
+    .story-label {
+
+        font-size: 8px;
+
+    }
+
+
+    .memory-card {
+
+        padding: 45px 25px;
+
+    }
+
+}
+/* =====================================================
+   HER UNIVERSE — STAGE 5
+===================================================== */
+
+#her-universe {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(255,255,255,0.06),
+            transparent 30%
+        ),
+        #020204;
+
+    color: white;
+
+    overflow: hidden;
+
+    padding-bottom: 180px;
+
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.her-intro {
+
+    min-height: 75vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+}
+
+
+.her-kicker {
+
+    font-size: 11px;
+
+    letter-spacing: 6px;
+
+    color: rgba(255,255,255,0.5);
+
+    margin-bottom: 25px;
+
+}
+
+
+.her-intro h2 {
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(70px, 13vw, 160px);
+
+    font-weight: 400;
+
+    letter-spacing: 15px;
+
+    margin: 0;
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,0.25),
+        0 0 60px rgba(255,255,255,0.08);
+
+}
+
+
+.her-intro span {
+
+    margin-top: 25px;
+
+    max-width: 500px;
+
+    color: rgba(255,255,255,0.6);
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   FEATURE IMAGE
+===================================================== */
+
+.her-feature {
+
+    min-height: 90vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 80px;
+
+    padding: 100px 8%;
+
+}
+
+
+.her-feature-image {
+
+    width: min(500px, 80vw);
+
+    height: 650px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    box-shadow:
+        0 0 80px rgba(255,255,255,0.08);
+
+}
+
+
+.her-feature-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 55%,
+            rgba(0,0,0,0.65)
+        );
+
+}
+
+
+.her-feature-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter: brightness(0.85);
+
+    transition:
+        transform 1.5s ease,
+        filter 1.5s ease;
+
+}
+
+
+.her-feature-image:hover img {
+
+    transform: scale(1.04);
+
+    filter: brightness(1);
+
+}
+
+
+.her-feature-text {
+
+    max-width: 420px;
+
+}
+
+
+.her-feature-text p,
+.her-memory-text p,
+.game-text p,
+.call-text p,
+.childhood-text p,
+.gallery-heading p,
+.her-ending p {
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: rgba(255,255,255,0.4);
+
+    margin-bottom: 20px;
+
+}
+
+
+.her-feature-text h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(32px, 4vw, 55px);
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+    margin: 0 0 25px;
+
+}
+
+
+.her-feature-text span {
+
+    color: rgba(255,255,255,0.55);
+
+    line-height: 1.9;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   GENERAL IMAGE EFFECT
+===================================================== */
+
+.her-photo img,
+.game-image img,
+.call-image img,
+.childhood-image img,
+.portrait img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 1.2s ease,
+        filter 1.2s ease;
+
+}
+
+
+.her-photo,
+.game-image,
+.call-image,
+.childhood-image,
+.portrait {
+
+    overflow: hidden;
+
+}
+
+
+.her-photo:hover img,
+.game-image:hover img,
+.call-image:hover img,
+.childhood-image:hover img,
+.portrait:hover img {
+
+    transform: scale(1.04);
+
+}
+
+
+/* =====================================================
+   MEMORY 01
+===================================================== */
+
+.her-memory {
+
+    min-height: 90vh;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 100px;
+
+    padding: 120px 12%;
+
+}
+
+
+.memory-left {
+
+    justify-content: flex-start;
+
+}
+
+
+.her-photo {
+
+    width: min(430px, 75vw);
+
+    height: 560px;
+
+    transform: rotate(-2deg);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.7);
+
+}
+
+
+.her-memory-text {
+
+    max-width: 380px;
+
+}
+
+
+.her-memory-text h3 {
+
+    font-family: Georgia, serif;
+
+    font-weight: 400;
+
+    font-size: clamp(30px, 4vw, 50px);
+
+    line-height: 1.2;
+
+}
+
+
+/* =====================================================
+   GAME MEMORY
+===================================================== */
+
+.game-memory {
+
+    min-height: 90vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 80px;
+
+    padding: 100px 10%;
+
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(80,90,130,0.12),
+            transparent 40%
+        );
+
+}
+
+
+.game-image {
+
+    width: min(650px, 85vw);
+
+    aspect-ratio: 16 / 9;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,0.8);
+
+}
+
+
+.game-text {
+
+    max-width: 360px;
+
+}
+
+
+.game-text h3 {
+
+    font-family: Georgia, serif;
+
+    font-weight: 400;
+
+    font-size: clamp(32px, 4vw, 55px);
+
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+
+}
+
+
+.game-text span {
+
+    color: rgba(255,255,255,0.55);
+
+    line-height: 1.8;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   FIRST CALL
+===================================================== */
+
+.call-memory {
+
+    min-height: 85vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 100px;
+
+    padding: 120px 10%;
+
+}
+
+
+.call-text {
+
+    max-width: 400px;
+
+}
+
+
+.call-text h3 {
+
+    font-family: Georgia, serif;
+
+    font-weight: 400;
+
+    font-size: clamp(32px, 4vw, 55px);
+
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+
+}
+
+
+.call-text span {
+
+    color: rgba(255,255,255,0.55);
+
+    line-height: 1.8;
+
+    font-size: 14px;
+
+}
+
+
+.call-image {
+
+    width: min(420px, 75vw);
+
+    height: 600px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,0.8);
+
+}
+
+
+/* =====================================================
+   CHILDHOOD
+===================================================== */
+
+.childhood-memory {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 50px;
+
+    padding: 120px 20px;
+
+    text-align: center;
+
+}
+
+
+.childhood-image {
+
+    width: min(480px, 80vw);
+
+    height: 600px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,0.8);
+
+}
+
+
+.childhood-text {
+
+    max-width: 500px;
+
+}
+
+
+.childhood-text h3 {
+
+    font-family: Georgia, serif;
+
+    font-weight: 400;
+
+    font-size: clamp(34px, 5vw, 60px);
+
+    line-height: 1.15;
+
+}
+
+
+/* =====================================================
+   PORTRAIT GALLERY
+===================================================== */
+
+.portrait-gallery {
+
+    padding: 150px 7%;
+
+}
+
+
+.gallery-heading {
+
+    text-align: center;
+
+    margin-bottom: 100px;
+
+}
+
+
+.gallery-heading h3 {
+
+    font-family: Georgia, serif;
+
+    font-weight: 400;
+
+    font-size: clamp(30px, 5vw, 60px);
+
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.15;
+
+}
+
+
+.portrait-grid {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 35px;
+
+    align-items: start;
+
+}
+
+
+.portrait {
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.7);
+
+}
+
+
+.portrait-1 {
+
+    height: 650px;
+
+}
+
+
+.portrait-2 {
+
+    height: 520px;
+
+    margin-top: 100px;
+
+}
+
+
+.portrait-3 {
+
+    height: 520px;
+
+    margin-top: -70px;
+
+}
+
+
+.portrait-4 {
+
+    height: 650px;
+
+}
+
+
+/* =====================================================
+   ENDING
+===================================================== */
+
+.her-ending {
+
+    min-height: 90vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 120px 20px;
+
+}
+
+
+.ending-star {
+
+    font-size: 45px;
+
+    margin-bottom: 40px;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px white,
+        0 0 40px rgba(255,255,255,0.5);
+
+    animation:
+        endingStar 2.5s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes endingStar {
+
+    from {
+
+        opacity: 0.4;
+
+        transform: scale(0.9);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1.15);
+
+    }
+
+}
+
+
+.her-ending h3 {
+
+    font-family: Georgia, serif;
+
+    font-weight: 400;
+
+    font-size: clamp(35px, 6vw, 70px);
+
+    line-height: 1.15;
+
+    margin: 0 0 30px;
+
+}
+
+
+.her-ending span {
+
+    color: rgba(255,255,255,0.55);
+
+    line-height: 2;
+
+    font-size: 15px;
+
+}
+
+
+.waiting-line {
+
+    margin-top: 60px;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color: rgba(255,255,255,0.3);
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .her-feature,
+    .her-memory,
+    .game-memory,
+    .call-memory {
+
+        flex-direction: column;
+
+        gap: 50px;
+
+        padding: 90px 25px;
+
+    }
+
+
+    .her-feature-image {
+
+        height: 500px;
+
+    }
+
+
+    .her-photo {
+
+        height: 500px;
+
+    }
+
+
+    .game-image {
+
+        width: 100%;
+
+    }
+
+
+    .call-image {
+
+        height: 500px;
+
+    }
+
+
+    .childhood-image {
+
+        height: 500px;
+
+    }
+
+
+    .portrait-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+
+    .portrait-1,
+    .portrait-2,
+    .portrait-3,
+    .portrait-4 {
+
+        height: 500px;
+
+        margin-top: 0;
+
+    }
+
+
+    .gallery-heading {
+
+        margin-bottom: 60px;
+
+    }
+
+}
+/* =====================================================
+   CINEMATIC PHOTO EFFECTS
+===================================================== */
+
+#her-universe img {
+    will-change: transform;
+}
+
+
+/* Slow cinematic movement */
+
+.her-feature-image img,
+.her-photo img,
+.game-image img,
+.call-image img,
+.childhood-image img,
+.portrait img {
+
+    transform: scale(1.02);
+
+}
+
+
+/* Featured image */
+
+.her-feature-image img {
+
+    animation: cinematicZoom 12s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes cinematicZoom {
+
+    from {
+        transform: scale(1.02);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+
+}
+
+
+/* =====================================================
+   FLOATING PHOTO EFFECTS
+===================================================== */
+
+.her-photo {
+
+    animation:
+        floatingPhoto 6s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes floatingPhoto {
+
+    from {
+        transform: rotate(-2deg) translateY(0);
+    }
+
+    to {
+        transform: rotate(-2deg) translateY(-12px);
+    }
+
+}
+
+
+/* =====================================================
+   SOFT LIGHT OVER PHOTOS
+===================================================== */
+
+.her-feature-image::before,
+.her-photo::before,
+.game-image::before,
+.call-image::before,
+.childhood-image::before,
+.portrait::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255,255,255,0.08),
+            transparent 45%
+        );
+
+    opacity: 0.7;
+
+}
+
+
+/* Make containers compatible with overlay */
+
+.her-feature-image,
+.her-photo,
+.game-image,
+.call-image,
+.childhood-image,
+.portrait {
+
+    position: relative;
+
+}
+
+
+/* =====================================================
+   STAR DUST AROUND HER UNIVERSE
+===================================================== */
+
+#her-universe::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.35;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.7) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        180px 180px;
+
+    animation:
+        starDrift 25s linear infinite;
+
+}
+
+
+@keyframes starDrift {
+
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 180px 180px;
+    }
+
+}
+
+
+/* =====================================================
+   PHOTO GLOW ON HOVER
+===================================================== */
+
+.her-feature-image:hover,
+.her-photo:hover,
+.game-image:hover,
+.call-image:hover,
+.childhood-image:hover,
+.portrait:hover {
+
+    box-shadow:
+        0 25px 100px rgba(255,255,255,0.10);
+
+}
+
+
+/* =====================================================
+   TEXT GLOW
+===================================================== */
+
+.her-intro h2 {
+
+    animation:
+        titleGlow 4s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes titleGlow {
+
+    from {
+
+        text-shadow:
+            0 0 15px rgba(255,255,255,0.15);
+
+    }
+
+    to {
+
+        text-shadow:
+            0 0 25px rgba(255,255,255,0.35),
+            0 0 70px rgba(255,255,255,0.10);
+
+    }
+
+}
+/* =====================================================
+   STAGE 6 — THE FIRST MEETING
+===================================================== */
+
+#first-meeting {
+
+    position: relative;
+
+    min-height: 120vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255,255,255,0.045),
+            transparent 35%
+        ),
+        #010103;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   BACKGROUND STARS
+===================================================== */
+
+.meeting-stars {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.5;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.8) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        170px 170px;
+
+    animation:
+        meetingStarDrift 30s linear infinite;
+
+}
+
+
+@keyframes meetingStarDrift {
+
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 170px 170px;
+    }
+
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.meeting-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 100px 20px;
+
+}
+
+
+.meeting-kicker {
+
+    font-size: 10px;
+
+    letter-spacing: 6px;
+
+    color: rgba(255,255,255,0.4);
+
+    margin-bottom: 45px;
+
+}
+
+
+/* =====================================================
+   CENTRAL STAR
+===================================================== */
+
+.meeting-star {
+
+    font-size: 55px;
+
+    line-height: 1;
+
+    margin-bottom: 45px;
+
+    color: white;
+
+    text-shadow:
+        0 0 12px white,
+        0 0 35px rgba(255,255,255,0.6),
+        0 0 80px rgba(255,255,255,0.25);
+
+    animation:
+        meetingStarPulse 3s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes meetingStarPulse {
+
+    from {
+
+        transform: scale(0.85);
+
+        opacity: 0.45;
+
+        text-shadow:
+            0 0 10px white,
+            0 0 25px rgba(255,255,255,0.35);
+
+    }
+
+    to {
+
+        transform: scale(1.15);
+
+        opacity: 1;
+
+        text-shadow:
+            0 0 18px white,
+            0 0 45px rgba(255,255,255,0.7),
+            0 0 100px rgba(255,255,255,0.3);
+
+    }
+
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.meeting-content h2 {
+
+    font-family: Georgia, serif;
+
+    font-weight: 400;
+
+    font-size: clamp(55px, 10vw, 125px);
+
+    line-height: 0.95;
+
+    letter-spacing: 8px;
+
+    margin: 0;
+
+    text-shadow:
+        0 0 25px rgba(255,255,255,0.15);
+
+}
+
+
+.meeting-line {
+
+    width: 1px;
+
+    height: 90px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.7),
+            transparent
+        );
+
+    margin: 45px 0;
+
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.meeting-message {
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(22px, 3vw, 35px);
+
+    font-style: italic;
+
+    margin: 0 0 18px;
+
+}
+
+
+.meeting-subtext {
+
+    color: rgba(255,255,255,0.45);
+
+    font-size: 13px;
+
+    line-height: 2;
+
+}
+
+
+.meeting-future {
+
+    margin-top: 45px;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: rgba(255,255,255,0.55);
+
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.meeting-button {
+
+    margin-top: 60px;
+
+    padding: 15px 30px;
+
+    background: transparent;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    color: rgba(255,255,255,0.75);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+
+.meeting-button:hover {
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,0.12);
+
+}
+
+
+/* =====================================================
+   FUTURE MESSAGE
+===================================================== */
+
+.future-message {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,0.06),
+            #010103 55%
+        );
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease;
+
+}
+
+
+.future-message.active {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: scale(1);
+
+}
+
+
+.future-star {
+
+    font-size: 40px;
+
+    margin-bottom: 35px;
+
+    text-shadow:
+        0 0 15px white,
+        0 0 50px rgba(255,255,255,0.5);
+
+    animation:
+        futurePulse 2s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes futurePulse {
+
+    from {
+
+        transform: scale(0.9);
+
+        opacity: 0.5;
+
+    }
+
+    to {
+
+        transform: scale(1.15);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+.future-message p {
+
+    font-size: 10px;
+
+    letter-spacing: 6px;
+
+    color: rgba(255,255,255,0.4);
+
+    margin-bottom: 25px;
+
+}
+
+
+.future-message h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(35px, 6vw, 70px);
+
+    line-height: 1.1;
+
+    font-weight: 400;
+
+    margin: 0 0 30px;
+
+}
+
+
+.future-message span {
+
+    color: rgba(255,255,255,0.5);
+
+    line-height: 1.9;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    #first-meeting {
+
+        min-height: 110vh;
+
+    }
+
+
+    .meeting-content h2 {
+
+        font-size: 58px;
+
+        letter-spacing: 4px;
+
+    }
+
+
+    .meeting-star {
+
+        font-size: 45px;
+
+    }
+
+
+    .meeting-line {
+
+        height: 65px;
+
+        margin: 35px 0;
+
+    }
+
+
+    .meeting-button {
+
+        padding: 14px 20px;
+
+        letter-spacing: 3px;
+
+    }
+
+}
+/* =====================================================
+   FINAL LOVE LETTER — STAGE 7
+===================================================== */
+
+#love-letter {
+    position: relative;
+    min-height: 150vh;
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255,255,255,0.055),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 80%,
+            rgba(255,255,255,0.025),
+            transparent 35%
+        ),
+        #010103;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* -----------------------------------------------------
+   BACKGROUND STARS
+----------------------------------------------------- */
+
+.letter-stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.8) 1px,
+            transparent 1px
+        );
+
+    background-size: 190px 190px;
+
+    animation:
+        letterStarDrift 35s linear infinite;
+}
+
+@keyframes letterStarDrift {
+
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 190px 190px;
+    }
+
+}
+
+/* -----------------------------------------------------
+   INTRO
+----------------------------------------------------- */
+
+.letter-content {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+.letter-kicker {
+    font-size: 10px;
+    letter-spacing: 6px;
+
+    color:
+        rgba(255,255,255,0.4);
+
+    margin-bottom: 50px;
+}
+
+/* -----------------------------------------------------
+   HEART
+----------------------------------------------------- */
+
+.letter-heart {
+    font-size: 45px;
+
+    margin-bottom: 45px;
+
+    color: white;
+
+    text-shadow:
+        0 0 12px white,
+        0 0 35px rgba(255,255,255,0.55),
+        0 0 80px rgba(255,255,255,0.2);
+
+    animation:
+        letterHeartPulse 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes letterHeartPulse {
+
+    from {
+        transform: scale(0.85);
+        opacity: 0.55;
+    }
+
+    to {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+}
+
+/* -----------------------------------------------------
+   TITLE
+----------------------------------------------------- */
+
+.letter-content h2 {
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(55px, 10vw, 120px);
+
+    line-height: 0.95;
+
+    font-weight: 400;
+
+    letter-spacing: 7px;
+
+    margin: 0;
+
+    text-shadow:
+        0 0 25px rgba(255,255,255,0.12);
+}
+
+/* -----------------------------------------------------
+   LINE
+----------------------------------------------------- */
+
+.letter-line {
+    width: 1px;
+    height: 90px;
+
+    margin: 50px 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.7),
+            transparent
+        );
+}
+
+/* -----------------------------------------------------
+   OPEN BUTTON
+----------------------------------------------------- */
+
+.open-letter-button {
+    padding: 16px 32px;
+
+    background: transparent;
+
+    border: 1px solid
+        rgba(255,255,255,0.3);
+
+    color:
+        rgba(255,255,255,0.75);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+}
+
+.open-letter-button:hover {
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color: white;
+
+    box-shadow:
+        0 0 35px
+        rgba(255,255,255,0.12);
+
+    transform:
+        translateY(-3px);
+}
+
+/* -----------------------------------------------------
+   LETTER OVERLAY
+----------------------------------------------------- */
+
+.love-letter-card {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,0.08),
+            #010103 65%
+        );
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+        scale(1.04);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.love-letter-card.active {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform:
+        scale(1);
+}
+
+/* -----------------------------------------------------
+   LETTER PAPER
+----------------------------------------------------- */
+
+.letter-paper {
+
+    position: relative;
+
+    width: min(720px, 92vw);
+
+    max-height: 82vh;
+
+    overflow-y: auto;
+
+    padding:
+        55px
+        clamp(25px, 6vw, 65px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #111116,
+            #08080c
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.16);
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,0.75),
+        0 0 70px
+        rgba(255,255,255,0.06);
+
+    scrollbar-width: thin;
+}
+
+/* subtle inner border */
+
+.letter-paper::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.055);
+
+    pointer-events: none;
+}
+
+/* -----------------------------------------------------
+   CLOSE BUTTON
+----------------------------------------------------- */
+
+.close-letter {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 22px;
+
+    z-index: 3;
+
+    border: none;
+
+    background: transparent;
+
+    color:
+        rgba(255,255,255,0.5);
+
+    font-size: 30px;
+
+    font-weight: 200;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.close-letter:hover {
+
+    color: white;
+
+    transform:
+        rotate(90deg);
+}
+
+/* -----------------------------------------------------
+   LETTER TEXT
+----------------------------------------------------- */
+
+.letter-small {
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(255,255,255,0.35);
+
+    margin-bottom: 35px;
+
+    line-height: 1.8;
+}
+
+.letter-paper h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: 34px;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    margin:
+        0 0 30px;
+}
+
+.letter-body {
+
+    font-family: Georgia, serif;
+
+    color:
+        rgba(255,255,255,0.72);
+
+    font-size: 16px;
+
+    line-height: 1.9;
+}
+
+.letter-body p {
+
+    margin:
+        0 0 22px;
+}
+
+.letter-final {
+
+    color:
+        rgba(255,255,255,0.9);
+
+    font-style: italic;
+
+    margin-top: 35px !important;
+}
+
+/* -----------------------------------------------------
+   SIGNATURE
+----------------------------------------------------- */
+
+.letter-signature {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    margin-top: 45px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    font-family: Georgia, serif;
+}
+
+.letter-signature span {
+
+    color:
+        rgba(255,255,255,0.45);
+
+    font-style: italic;
+
+    margin-bottom: 8px;
+}
+
+.letter-signature strong {
+
+    font-size: 22px;
+
+    font-weight: 400;
+
+    text-shadow:
+        0 0 15px
+        rgba(255,255,255,0.25);
+}
+
+/* -----------------------------------------------------
+   FINAL ENDING
+----------------------------------------------------- */
+
+.letter-ending {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 50vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        100px 20px;
+}
+
+.ending-heart {
+
+    font-size: 32px;
+
+    margin-bottom: 30px;
+
+    text-shadow:
+        0 0 15px white,
+        0 0 45px rgba(255,255,255,0.45);
+
+    animation:
+        endingHeartPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes endingHeartPulse {
+
+    from {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+}
+
+.letter-ending p {
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color:
+        rgba(255,255,255,0.35);
+
+    margin-bottom: 25px;
+}
+
+.letter-ending h3 {
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(30px, 5vw, 60px);
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.85);
+}
+
+/* -----------------------------------------------------
+   REPLAY BUTTON
+----------------------------------------------------- */
+
+.replay-universe {
+
+    margin-top: 55px;
+
+    padding: 14px 25px;
+
+    background: transparent;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.2);
+
+    color:
+        rgba(255,255,255,0.5);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition:
+        all 0.4s ease;
+}
+
+.replay-universe:hover {
+
+    color: white;
+
+    border-color:
+        rgba(255,255,255,0.5);
+
+    box-shadow:
+        0 0 25px
+        rgba(255,255,255,0.1);
+
+    transform:
+        translateY(-2px);
+}
+
+/* -----------------------------------------------------
+   MOBILE
+----------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    #love-letter {
+        min-height: 145vh;
+    }
+
+    .letter-content {
+        padding:
+            80px 18px;
+    }
+
+    .letter-content h2 {
+        font-size: 58px;
+        letter-spacing: 4px;
+    }
+
+    .letter-heart {
+        font-size: 38px;
+        margin-bottom: 35px;
+    }
+
+    .letter-line {
+        height: 65px;
+        margin: 35px 0;
+    }
+
+    .open-letter-button {
+        padding:
+            14px 22px;
+
+        letter-spacing: 3px;
+    }
+
+    .love-letter-card {
+        padding: 15px;
+    }
+
+    .letter-paper {
+
+        width: 94vw;
+
+        max-height: 88vh;
+
+        padding:
+            45px 24px;
+    }
+
+    .letter-paper h3 {
+        font-size: 29px;
+    }
+
+    .letter-body {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .letter-small {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .letter-ending {
+        min-height: 45vh;
+    }
+
+}
+/* =====================================================
+   CINEMATIC MUSIC BUTTON
+===================================================== */
+
+.music-toggle {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 9999;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(255,255,255,0.25);
+
+    background:
+        rgba(5,5,8,0.75);
+
+    backdrop-filter: blur(10px);
+
+    color:
+        rgba(255,255,255,0.75);
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 0 20px
+        rgba(255,255,255,0.08);
+
+    transition:
+        transform 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.music-toggle:hover {
+
+    transform:
+        scale(1.1);
+
+    color: white;
+
+    border-color:
+        rgba(255,255,255,0.55);
+
+    box-shadow:
+        0 0 30px
+        rgba(255,255,255,0.15);
+}
+
+
+/* Music playing animation */
+
+.music-toggle.playing {
+
+    animation:
+        musicPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes musicPulse {
+
+    from {
+        box-shadow:
+            0 0 15px
+            rgba(255,255,255,0.08);
+    }
+
+    to {
+        box-shadow:
+            0 0 35px
+            rgba(255,255,255,0.25);
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .music-toggle {
+
+        width: 44px;
+        height: 44px;
+
+        right: 16px;
+        bottom: 16px;
+
+        font-size: 18px;
+    }
+
+}
+/* =====================================================
+   FINAL POLISH
+===================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Softer letter typography */
+
+.letter-body em {
+    color: rgba(255,255,255,0.95);
+    text-shadow:
+        0 0 12px rgba(255,255,255,0.12);
+}
+
+/* Make the important final paragraph breathe */
+
+.letter-final {
+    line-height: 2.05;
+    font-size: 17px;
+}
+
+/* Slight cinematic glow around the final signature */
+
+.letter-signature strong {
+    animation:
+        signatureGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes signatureGlow {
+
+    from {
+        text-shadow:
+            0 0 8px
+            rgba(255,255,255,0.12);
+    }
+
+    to {
+        text-shadow:
+            0 0 18px
+            rgba(255,255,255,0.3);
+    }
+
+}
+
+/* Better touch interaction on phones */
+
+button {
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+/* Prevent text selection on cinematic controls */
+
+.music-toggle,
+.open-letter-button,
+.close-letter,
+.meeting-button,
+.replay-universe {
+    user-select: none;
+}
+/* =====================================================
+   HER VIDEO — CINEMATIC SECTION
+===================================================== */
+
+.her-video-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 140px 20px;
+
+    overflow: hidden;
+}
+
+.her-video-heading {
+    margin-bottom: 55px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.her-video-heading p {
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color:
+        rgba(255,255,255,0.35);
+
+    margin-bottom: 25px;
+}
+
+.her-video-heading h3 {
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(35px, 6vw, 70px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.9);
+
+    text-shadow:
+        0 0 30px
+        rgba(255,255,255,0.12);
+}
+
+
+/* -----------------------------------------------------
+   VIDEO FRAME
+----------------------------------------------------- */
+
+.her-video-frame {
+    position: relative;
+
+    width: min(850px, 90vw);
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.18);
+
+    background: #000;
+
+    box-shadow:
+        0 35px 100px
+        rgba(0,0,0,0.8),
+        0 0 80px
+        rgba(255,255,255,0.05);
+
+    z-index: 2;
+}
+
+.her-video-frame video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    opacity: 0.92;
+
+    transition:
+        transform 1.5s ease,
+        opacity 1s ease;
+}
+
+.her-video-frame:hover video {
+    transform: scale(1.025);
+
+    opacity: 1;
+}
+
+
+/* -----------------------------------------------------
+   VIDEO GLOW
+----------------------------------------------------- */
+
+.video-glow {
+    position: absolute;
+
+    inset: -20%;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,0.08),
+            transparent 55%
+        );
+
+    mix-blend-mode: screen;
+
+    opacity: 0.5;
+}
+
+
+/* -----------------------------------------------------
+   CAPTION
+----------------------------------------------------- */
+
+.her-video-caption {
+    margin-top: 30px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.her-video-caption span {
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(255,255,255,0.3);
+}
+
+
+/* -----------------------------------------------------
+   MOBILE
+----------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .her-video-section {
+        min-height: 85vh;
+
+        padding:
+            100px 15px;
+    }
+
+    .her-video-heading {
+        margin-bottom: 35px;
+    }
+
+    .her-video-frame {
+        width: 94vw;
+
+        aspect-ratio: 16 / 9;
+    }
+
+    .her-video-caption {
+        margin-top: 22px;
+    }
+
+}
+/* =====================================================
+   CINEMATIC FINAL SCENE
+===================================================== */
+
+.letter-ending {
+    position: relative;
+
+    min-height: 75vh;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 120px 20px;
+
+    overflow: hidden;
+}
+
+
+/* -----------------------------------------------------
+   FINAL STARS
+----------------------------------------------------- */
+
+.final-stars {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.35;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.8) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        190px 190px;
+
+    animation:
+        finalStarDrift 40s linear infinite;
+}
+
+@keyframes finalStarDrift {
+
+    from {
+        background-position:
+            0 0;
+    }
+
+    to {
+        background-position:
+            190px 190px;
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   FINAL HEART
+----------------------------------------------------- */
+
+.letter-ending .ending-heart {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 38px;
+
+    margin-bottom: 40px;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px white,
+        0 0 45px
+        rgba(255,255,255,0.5);
+
+    animation:
+        finalHeart 3s ease-in-out infinite alternate;
+}
+
+@keyframes finalHeart {
+
+    from {
+        transform: scale(0.85);
+
+        opacity: 0.5;
+    }
+
+    to {
+        transform: scale(1.15);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   KICKER
+----------------------------------------------------- */
+
+.final-kicker {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color:
+        rgba(255,255,255,0.3);
+
+    margin-bottom: 30px;
+}
+
+
+/* -----------------------------------------------------
+   FINAL TITLE
+----------------------------------------------------- */
+
+.letter-ending h3 {
+    position: relative;
+
+    z-index: 2;
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(45px, 8vw, 90px);
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    line-height: 1.05;
+
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.92);
+
+    text-shadow:
+        0 0 30px
+        rgba(255,255,255,0.15);
+}
+
+
+/* -----------------------------------------------------
+   FINAL LINE
+----------------------------------------------------- */
+
+.final-line {
+    position: relative;
+
+    z-index: 2;
+
+    width: 1px;
+
+    height: 80px;
+
+    margin: 45px 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.7),
+            transparent
+        );
+}
+
+
+/* -----------------------------------------------------
+   FINAL MESSAGE
+----------------------------------------------------- */
+
+.final-message {
+    position: relative;
+
+    z-index: 2;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    line-height: 1.9;
+}
+
+
+/* -----------------------------------------------------
+   TIMELINE
+----------------------------------------------------- */
+
+.final-future {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 50px;
+}
+
+.final-future span {
+
+    font-size: 8px;
+
+    letter-spacing: 5px;
+
+    color:
+        rgba(255,255,255,0.25);
+}
+
+
+/* -----------------------------------------------------
+   FINAL SIGNATURE
+----------------------------------------------------- */
+
+.final-signature {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: 60px;
+}
+
+.final-signature span {
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    font-style: italic;
+
+    color:
+        rgba(255,255,255,0.4);
+
+    margin-bottom: 15px;
+}
+
+.final-signature strong {
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(20px, 3vw, 30px);
+
+    font-weight: 400;
+
+    color:
+        rgba(255,255,255,0.85);
+
+    text-shadow:
+        0 0 20px
+        rgba(255,255,255,0.15);
+}
+
+
+/* -----------------------------------------------------
+   REPLAY
+----------------------------------------------------- */
+
+.letter-ending .replay-universe {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 65px;
+}
+
+
+/* -----------------------------------------------------
+   MOBILE
+----------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .letter-ending {
+
+        min-height: 70vh;
+
+        padding:
+            100px 20px;
+    }
+
+    .letter-ending .ending-heart {
+
+        font-size: 32px;
+
+        margin-bottom: 30px;
+    }
+
+    .final-line {
+
+        height: 60px;
+
+        margin: 35px 0;
+    }
+
+    .final-message {
+
+        font-size: 14px;
+    }
+
+    .final-future {
+
+        margin-top: 40px;
+    }
+
+    .final-future span {
+
+        font-size: 7px;
+
+        letter-spacing: 3px;
+    }
+
+    .final-signature {
+
+        margin-top: 45px;
+    }
+
+}

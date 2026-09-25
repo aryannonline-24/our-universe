@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Our Little Universe ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         OPENING SCREEN
+    ========================== -->
+
+    <section id="welcome">
+
+        <div class="night-sky">
+
+            <!-- Moon -->
+            <div class="moon"></div>
+
+
+            <!-- Opening Text -->
+            <div class="opening-text">
+
+                <p class="moon-line">
+                    Somewhere under the same moon...
+                </p>
+
+                <p class="story-line">
+                    two people found each other.
+                </p>
+
+                <h1>
+                    Aryan <span>×</span> Krushna
+                </h1>
+
+                <p class="subtitle">
+                    Two people. One universe.
+                </p>
+
+                <button onclick="enterUniverse()">
+                    ENTER OUR UNIVERSE ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MAIN WEBSITE
+    ========================== -->
+
+    <!-- =========================
+     OUR UNIVERSE
+========================== -->
+
+<section id="universe" class="hidden">
+
+    <div class="universe-home">
+
+        <!-- Title -->
+
+        <div class="universe-title">
+
+            <p class="small-title">
+                WELCOME TO
+            </p>
+
+            <h2>
+                OUR UNIVERSE
+            </h2>
+
+            <p class="description">
+                Somewhere between millions of stars,
+                there are two that belong to us.
+            </p>
+
+        </div>
+
+
+        <!-- Connection between the two stars -->
+
+        <div class="connection-line"></div>
+
+
+        <!-- ARYAN -->
+
+        <div class="universe-person aryan">
+
+            <div class="personal-star">
+                ✦
+            </div>
+
+            <h3>
+                ARYAN
+            </h3>
+
+            <p>
+                One half of this universe
+            </p>
+
+        </div>
+
+
+        <!-- KRUSHNA -->
+
+        <div class="universe-person krushna">
+
+            <div class="personal-star">
+                ✦
+            </div>
+
+            <h3>
+                KRUSHNA
+            </h3>
+
+            <p>
+                The other half ❤️
+            </p>
+
+        </div>
+
+
+        <!-- Scroll indicator -->
+
+        <div class="scroll-message">
+
+            <div class="scroll-arrow">
+                ↓
+            </div>
+
+            <p>
+                SCROLL TO EXPLORE OUR STORY
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     OUR STORY
+========================== -->
+
+<section id="story">
+
+    <div class="story-header">
+
+        <p>THE CONSTELLATION OF US</p>
+
+        <h2>OUR STORY</h2>
+
+        <span>
+            Every star holds a memory.
+        </span>
+
+    </div>
+
+
+    <div class="story-universe">
+
+
+        <!-- Connecting constellation -->
+
+        <div class="constellation-line line-1"></div>
+
+        <div class="constellation-line line-2"></div>
+
+        <div class="constellation-line line-3"></div>
+
+        <div class="constellation-line line-4"></div>
+
+
+        <!-- MEMORY 1 -->
+
+        <button
+            class="story-star star-1"
+            onclick="openMemory(1)"
+            aria-label="The Beginning">
+
+            ✦
+
+        </button>
+
+
+        <!-- MEMORY 2 -->
+
+        <button
+            class="story-star star-2"
+            onclick="openMemory(2)"
+            aria-label="First Conversation">
+
+            ✦
+
+        </button>
+
+
+        <!-- MEMORY 3 -->
+
+        <button
+            class="story-star star-3"
+            onclick="openMemory(3)"
+            aria-label="First Call">
+
+            ✦
+
+        </button>
+
+
+        <!-- MEMORY 4 -->
+
+        <button
+            class="story-star star-4"
+            onclick="openMemory(4)"
+            aria-label="A Special Memory">
+
+            ✦
+
+        </button>
+
+
+        <!-- MEMORY 5 -->
+
+        <button
+            class="story-star star-5"
+            onclick="openMemory(5)"
+            aria-label="Today">
+
+            ✦
+
+        </button>
+
+
+        <!-- Labels -->
+
+        <div class="story-label label-1">
+    THE BEGINNING
+</div>
+
+<div class="story-label label-2">
+    FIRST CONVERSATION
+</div>
+
+<div class="story-label label-3">
+    I LOVE YOU
+</div>
+
+<div class="story-label label-4">
+    FIRST CALL
+</div>
+
+<div class="story-label label-5">
+    FIRST MEETING
+</div>
+
+
+    </div>
+
+
+    <!-- MEMORY POPUP -->
+
+    <div id="memory-modal" class="memory-modal">
+
+        <div class="memory-card">
+
+            <button
+                class="close-memory"
+                onclick="closeMemory()">
+
+                ×
+
+            </button>
+
+
+            <p id="memory-number">
+                MEMORY 01
+            </p>
+
+
+            <h3 id="memory-title">
+                The Beginning
+            </h3>
+
+
+            <div class="memory-date"
+                 id="memory-date">
+
+                Somewhere in time
+
+            </div>
+
+
+            <p id="memory-text">
+
+                This is where our story began.
+
+            </p>
+
+
+            <button
+                class="next-memory"
+                onclick="closeMemory()">
+
+                CLOSE MEMORY
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     HER UNIVERSE
+========================= -->
+
+<section id="her-universe">
+
+    <div class="her-intro">
+
+        <p class="her-kicker">
+            A LITTLE PIECE OF MY UNIVERSE
+        </p>
+
+        <h2>
+            HER
+        </h2>
+
+        <span>
+            The girl who became my favorite part of the sky.
+        </span>
+
+    </div>
+
+
+    <!-- FEATURED MEMORY -->
+
+    <div class="her-feature">
+
+        <div class="her-feature-image">
+
+            <img
+                src="images/her-eye.jpeg"
+                alt="A close-up memory">
+
+        </div>
+
+        <div class="her-feature-text">
+
+            <p>THE WAY I SEE HER</p>
+
+            <h3>
+                Some things are<br>
+                impossible to explain.
+            </h3>
+
+            <span>
+                Sometimes it's just one look,
+                one smile, one little moment —
+                and somehow the whole universe feels different.
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- MEMORY 01 -->
+
+    <div class="her-memory memory-left">
+
+        <div class="her-photo">
+
+            <img
+                src="images/her-white.jpeg"
+                alt="Her in white">
+
+        </div>
+
+        <div class="her-memory-text">
+
+            <p>01 / HER</p>
+
+            <h3>
+                Somewhere between<br>
+                ordinary and unforgettable.
+            </h3>
+
+        </div>
+
+    </div>
+
+
+    <!-- GAME MEMORY -->
+
+    <div class="game-memory">
+
+        <div class="game-image">
+
+            <img
+                src="images/game.jpeg"
+                alt="Where our story began">
+
+        </div>
+
+        <div class="game-text">
+
+            <p>WHERE IT ALL BEGAN</p>
+
+            <h3>
+                Just a game.
+                <br>
+                Until it wasn't.
+            </h3>
+
+            <span>
+                Somewhere near the end of July 2024,
+                two people met while playing a game.
+                Neither of us knew that little moment
+                would become the beginning of everything.
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- VIDEO CALL -->
+
+    <div class="call-memory">
+
+        <div class="call-text">
+
+            <p>22 JUNE 2025</p>
+
+            <h3>
+                The distance<br>
+                got a little smaller.
+            </h3>
+
+            <span>
+                Our first call.
+                Finally hearing the voice behind
+                all those messages.
+            </span>
+
+        </div>
+
+        <div class="call-image">
+
+            <img
+                src="images/video-call.jpeg"
+                alt="A video call memory">
+
+        </div>
+
+    </div>
+
+
+    <!-- CHILDHOOD -->
+
+    <div class="childhood-memory">
+
+        <div class="childhood-image">
+
+            <img
+                src="images/childhood.jpeg"
+                alt="Her childhood memory">
+
+        </div>
+
+        <div class="childhood-text">
+
+            <p>BEFORE I KNEW YOU</p>
+
+            <h3>
+                A little girl<br>
+                who would someday<br>
+                become my person.
+            </h3>
+
+        </div>
+
+    </div>
+
+
+    <!-- PORTRAIT GALLERY -->
+
+    <div class="portrait-gallery">
+
+        <div class="gallery-heading">
+
+            <p>A FEW OF MY FAVORITE VIEWS</p>
+
+            <h3>
+                HER, IN A THOUSAND LITTLE MOMENTS.
+            </h3>
+
+        </div>
+
+
+        <div class="portrait-grid">
+
+            <div class="portrait portrait-1">
+
+                <img
+                    src="images/her-traditional.jpeg"
+                    alt="Her in traditional clothes">
+
+            </div>
+
+
+            <div class="portrait portrait-2">
+
+                <img
+                    src="images/her-red.jpeg"
+                    alt="Her in red">
+
+            </div>
+
+
+            <div class="portrait portrait-3">
+
+                <img
+                    src="images/her-braid.jpeg"
+                    alt="Her with a braid">
+
+            </div>
+
+
+            <div class="portrait portrait-4">
+
+                <img
+                    src="images/her-glasses.jpeg"
+                    alt="Her wearing glasses">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FINAL MESSAGE -->
+<!-- =========================
+     HER VIDEO
+========================= -->
+
+<div class="her-video-section">
+
+    <div class="her-video-heading">
+
+        <p>
+            A LITTLE MOMENT OF HER
+        </p>
+
+        <h3>
+            Some moments<br>
+            deserve to move.
+        </h3>
+
+    </div>
+
+    <div class="her-video-frame">
+
+        <video
+            src="her-video.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+        </video>
+
+        <div class="video-glow"></div>
+
+    </div>
+
+    <div class="her-video-caption">
+
+        <span>
+            JUST ANOTHER LITTLE PIECE OF YOU
+        </span>
+
+    </div>
+
+</div>
+
+
+    <div class="her-ending">
+
+        <div class="ending-star">
+            ✦
+        </div>
+
+        <p>
+            ONE THING IS STILL MISSING
+        </p>
+
+        <h3>
+            Our first photo together.
+        </h3>
+
+        <span>
+            We haven't met yet.
+            <br>
+            So this space stays empty...
+            for now.
+        </span>
+
+        <div class="waiting-line">
+            SOME MEMORIES ARE STILL WAITING TO HAPPEN.
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     THE FIRST MEETING
+========================= -->
+
+<section id="first-meeting">
+
+    <div class="meeting-stars"></div>
+
+    <div class="meeting-content">
+
+        <p class="meeting-kicker">
+            ONE MEMORY IS STILL MISSING
+        </p>
+
+        <div class="meeting-star">
+            ✦
+        </div>
+
+        <h2>
+            OUR FIRST<br>
+            MEETING
+        </h2>
+
+        <div class="meeting-line"></div>
+
+        <p class="meeting-message">
+            We haven't met yet.
+        </p>
+
+        <span class="meeting-subtext">
+            So this isn't a memory.
+            <br>
+            Not yet.
+        </span>
+
+        <p class="meeting-future">
+            It's a moment waiting for us.
+        </p>
+
+        <button
+            class="meeting-button"
+            onclick="revealMeeting()">
+
+            WHEN THAT DAY COMES
+
+        </button>
+
+    </div>
+
+
+    <!-- FUTURE MESSAGE -->
+
+    <div
+        id="future-message"
+        class="future-message">
+
+        <div class="future-star">
+            ✦
+        </div>
+
+        <p>
+            SOMEDAY
+        </p>
+
+        <h3>
+            This won't be<br>
+            an empty space anymore.
+        </h3>
+
+        <span>
+            And when it isn't,
+            we'll have our first photo together.
+        </span>
+
+    </div>
+
+</section>
+<!-- =========================
+     FINAL LOVE LETTER
+========================= -->
+
+<section id="love-letter">
+
+    <div class="letter-stars"></div>
+
+    <div class="letter-content">
+
+        <p class="letter-kicker">
+            THE LAST PAGE OF OUR UNIVERSE
+        </p>
+
+        <div class="letter-heart">
+            ♥
+        </div>
+
+        <h2>
+            FOR YOU,<br>
+            KRUSHNA.
+        </h2>
+
+        <div class="letter-line"></div>
+
+        <button
+            class="open-letter-button"
+            onclick="openLoveLetter()">
+
+            OPEN MY HEART
+
+        </button>
+
+    </div>
+
+    <div
+        id="love-letter-card"
+        class="love-letter-card">
+
+        <div class="letter-paper">
+
+            <button
+                class="close-letter"
+                onclick="closeLoveLetter()">
+
+                ×
+
+            </button>
+
+            <p class="letter-small">
+                TO THE GIRL WHO BECAME MY FAVORITE PART OF THE UNIVERSE
+            </p>
+
+            <h3>
+                My Krushna,
+            </h3>
+
+            <div class="letter-body">
+
+    <p>
+        If someone had told me near the end of July 2024
+        that a random game would introduce me to someone
+        who would become this important to me,
+        I probably wouldn't have believed them.
+    </p>
+
+    <p>
+        But then there was you.
+        First, just a conversation in August.
+        Then more conversations.
+        More laughs.
+        More late nights.
+        More little moments that slowly started
+        meaning more than they probably should have.
+    </p>
+
+    <p>
+        And then came 19 September 2024.
+    </p>
+
+    <p>
+        Three simple words.
+        <br>
+        <em>I love you.</em>
+        <br>
+        Somehow, those three words became one of
+        the most beautiful parts of my life.
+    </p>
+
+    <p>
+        Then came 22 June 2025 —
+        our first call.
+        After all those messages,
+        finally hearing your voice made the distance
+        feel just a little smaller.
+    </p>
+
+    <p>
+        And there's something special about our story
+        that I don't want to forget.
+    </p>
+
+    <p>
+        We still haven't met.
+        We still don't have that first photo together.
+        We haven't lived those moments that one day
+        we'll probably look back on and smile about.
+    </p>
+
+    <p>
+        But that doesn't mean our story is incomplete.
+    </p>
+
+    <p>
+        It simply means some of my favorite memories
+        with you haven't happened yet.
+    </p>
+
+    <p>
+        Somewhere ahead of us is that first meeting.
+        The first time we'll finally stand in front of
+        each other instead of behind a screen.
+        The first photo.
+        The first hug.
+        The first ordinary day that somehow won't feel
+        ordinary at all.
+    </p>
+
+    <p>
+        And until that day comes,
+        I want you to know one thing.
+    </p>
+
+    <p class="letter-final">
+        I would choose this story again.
+        <br><br>
+        I would choose every conversation,
+        every call, every laugh,
+        every late-night moment,
+        and every kilometre between us.
+        <br><br>
+        Because somehow,
+        through all that distance,
+        I found you.
+    </p>
+
+</div>
+
+            <div class="letter-signature">
+
+                <span>Always yours,</span>
+
+                <strong>
+                    Aryan ❤️
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+   <div class="letter-ending">
+
+    <div class="final-stars"></div>
+
+    <div class="ending-heart">
+        ♥
+    </div>
+
+    <p class="final-kicker">
+        AND THAT'S WHERE THIS CHAPTER ENDS
+    </p>
+
+    <h3>
+        But not our story.
+    </h3>
+
+    <div class="final-line"></div>
+
+    <span class="final-message">
+        Some of the most beautiful moments
+        <br>
+        are the ones we haven't lived yet.
+    </span>
+
+    <div class="final-future">
+        <span>
+            JULY 2024&nbsp;&nbsp;→&nbsp;&nbsp;TODAY&nbsp;&nbsp;→&nbsp;&nbsp;SOMEDAY
+        </span>
+    </div>
+
+    <div class="final-signature">
+
+        <span>
+            Until the day I finally meet you...
+        </span>
+
+        <strong>
+            I'll keep finding you in every universe.
+        </strong>
+
+    </div>
+
+    <button
+        class="replay-universe"
+        onclick="replayUniverse()">
+        ↻ START OUR UNIVERSE AGAIN
+    </button>
+
+</div>
+
+</section>
+<!-- =========================
+     CINEMATIC MUSIC
+========================= -->
+
+<audio
+    id="universe-music"
+    src="audio/universe.mp3"
+    loop
+    preload="auto">
+</audio>
+
+<button
+    id="music-toggle"
+    class="music-toggle"
+    onclick="toggleMusic()"
+    aria-label="Toggle music">
+
+    ♫
+
+</button>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
